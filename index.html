@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/screenStyle.css" media="all">
+
+
+    <title>My Blog about Cats</title>
+</head>
+
+<body>
+
+    <script src="https://accounts.google.com/gsi/client"></script>
+
+    <header>
+
+
+        <div class="container">
+            <div class="left-sidebar">
+
+            </div>
+
+            <div class="main-content">
+
+                <nav class="navigation">
+                    <a href="#welcome">Welcome! </a>
+                    <a href="#main/1">Articles </a>
+                    <a href="#artInsert">Add article</a>
+                    <a href="#opinions">Visitor opinions</a>
+                    <a href="#addOpinion">Add your opinion</a>
+                </nav>
+
+
+
+
+
+
+
+
+
+                <h1 class="field_head">Cats and life</h1>
+
+
+                <div id="contikue">
+                    <div id="g_id_onload"
+                        data-client_id="1077040936639-9c70kl2ogknke14rn1ch9apkfkh7hlcg.apps.googleusercontent.com"
+                        data-context="use" data-ux_mode="popup" data-auto_prompt="false"
+                        data-callback="handleCredentialResponse">
+                    </div>
+
+                    <div class="g_id_signin" id="signin" data-type="icon" data-shape="circle" data-theme="outline"
+                        data-text="signin_with" data-size="large" data-onsuccess="handleCredentialResponse">
+                    </div>
+                    <p id="tatar">Welcome</p>
+                    <br>
+                    <button id="tadzik" onclick="signOut()">Sign Out</button>
+                    <p></p>
+                </div>
+
+            </div>
+            <div class="right-sidebar">
+            </div>
+        </div>
+
+
+    </header>
+    <div id="m"></div>
+    <main id="router-view">
+    </main>
+
+
+
+    <!--Templates for html, dynamically inserted by the router -->
+
+    <script id="template-welcome" type="text/template">
+
+        <div class="container">
+            <div class="left-sidebar">
+            </div>
+            <div class="main-content">
+            <h1 id="about-us" class="field">Vitajte na blogu o mačkách!</h1>
+            <br>
+            <p class="field">Vitajte v našom útulnom kútiku venovanom roztomilým a tajomným stvoreniam - mačkám! Náš
+                blog vám ponúka fascinujúce články, tipy a zaujímavosti zo sveta mačiek. Tu nájdete všetko, čo súvisí s
+                týmito chlpatými kamarátmi a dozviete sa, ako urobiť ich život šťastnejším a zdravším.</p>
+            <br>
+            <br>
+            <div class="cat-container cat-container-small">
+                <div class="cat"> <!-- Первый котик -->
+                    <svg width="100" height="100">
+                        <!-- body -->
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <!-- eyes -->
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <!-- ears-->
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <!-- ears inside -->
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <!-- nose -->
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <!-- paws -->
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <!-- paws pink -->
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+                <div class="cat"> <!-- Второй котик -->
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="cat-container cat-container-large">
+                <div class="cat">
+                    <svg width="100" height="100">
+                        <!-- body -->
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <!-- eyes -->
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <!-- ears-->
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <!-- ears inside -->
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <!-- nose -->
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <!-- paws -->
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <!-- paws pink -->
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+                <div class="cat">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+                <div class="cat">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+                <div class="cat">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+                <div class="cat">
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="black" />
+                        <circle cx="30" cy="30" r="5" fill="#475239" />
+                        <circle cx="70" cy="30" r="5" fill="#475239" />
+                        <circle cx="30" cy="30" r="2" fill="black" />
+                        <circle cx="70" cy="30" r="2" fill="black" />
+                        <polygon points="20,20 30,1 40,20" fill="black" />
+                        <polygon points="60,20 70,1 80,20" fill="black" />
+                        <polygon points="27,12 30,5 33,12" fill="pink" />
+                        <polygon points="67,12 70,5 73,12" fill="pink" />
+                        <polygon points="50,45 53,48 47,48" fill="white" />
+                        <ellipse cx="30" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="70" cy="70" rx="10" ry="5" fill="black" />
+                        <ellipse cx="30" cy="70" rx="5" ry="3" fill="pink" />
+                        <ellipse cx="70" cy="70" rx="5" ry="3" fill="pink" />
+                    </svg>
+                </div>
+            </div>
+            <br>
+
+            <img class="field_img" src="fig/happy.jpg" alt="Meow">
+
+
+            <br>
+
+            <p id="contact-us"> Roman Hulyk (autor) <a href="mailto:roman.hulyk@student.tuke.sk">mail</a></p>
+            <br>
+        </div>
+        <div class="right-sidebar">
+        
+        </div>
+
+    </div>
+     
+    
+</script>
+
+    <script id="template-main" type="text/template">
+
+        <div class="container">
+            <div class="left-sidebar"></div>
+            <div class="main-content">
+               
+               
+               
+
+                <p class="statti">
+                    Displaying page {{currPage}} of {{pageCount}} pages.
+                </p>
+                <nav class="pereklucka">
+                    {{#prevPage}}
+                    <a id="decrement-count" href="#main/{{prevPage}}/{{pageCount}}"><< Previous page</a>
+                    {{/prevPage}}
+                    {{#nextPage}}
+                    <a id="increment-count" href="#main/{{nextPage}}/{{pageCount}}">Next page >></a>
+                    {{/nextPage}}
+                </nav>
+                
+        </div>
+        <div class="right-sidebar">
+        
+        </div>
+
+
+        
+
+    </div>
+</script>
+
+
+
+    <script id="template-articles" type="text/template">
+    <div class="container">
+        <div class="left-sidebar"></div>
+        <div class="main-content">
+
+            
+            <div id="findArt" class="find-art-container">
+                <div class="form__group field">
+                    
+                    <input type="text" class="form__field" id="tag" placeholder="Find article by tag:" name="tag" required/>
+                    <a href="#findArtbyTag" class="findTag" id="findArtbyTag">Find</a>
+                </div>
+            </div>
+            
+
+            <div class="statti1">
+                {{#articles}}
+                <article>
+                    <h2><a href="{{detailLink}}">{{title}}</a></h2>
+                    <p>
+                        by {{author}}
+                    </p>
+                    <!-- Добавляем отображение содержимого статьи -->
+                    <div class="article-content">
+                        {{content}}
+                    </div>
+                </article>
+                {{/articles}}
+            </div>
+        </div>
+        <div class="right-sidebar"></div>
+    </div>
+</script>
+
+
+    <script id="template-articles-error" type="text/template">
+        <div class="container">
+            <div class="left-sidebar"></div>
+            <div class="main-content">
+    <article>
+        <h2>Article(s) acquisition failed</h2>
+        <p>
+            {{errMessage}}
+        </p>
+    </article>
+     
+</div>
+<div class="right-sidebar"></div>
+</div>
+
+</script>
+
+
+
+    <script id="template-opinions" type="text/template">
+        <article> 
+            <div class="container">
+            <div class="left-sidebar">
+            </div>
+            <div class="main-content">
+                <h2 id="artOpinions">Názory návštevníkov</h2>
+                <div id="opinionsContainer">
+                {{#.}}
+                <section>
+                    <h3>{{name}} </h3> 
+                    <p><span class="label">Názor na mačky:</span> {{comment}}</p>
+                    <p><span class="label">Email:</span> {{email}}</p>
+                    <p><span class="label">URL obrázka:</span> {{image_url}}</p>
+                    <p><span class="label">Preferencie:</span> {{cat_type}}</p>
+                    <p><span class="label">Kľúčové slová:</span> {{keywords}}</p>
+                    <p><span>{{created}}</span></p>
+                </section>
+                {{/.}}
+                {{^.}}
+                <section>
+                    Sorry, no opinions found.
+                </section>
+                {{/.}}
+             </div>
+          </div>
+            <div class="right-sidebar">
+            </div>
+        </div>
+    </article>
+    </script>
+
+
+
+
+    <script id="template-addOpinion" type="text/template">
+        <div class="container">
+            <div class="left-sidebar">
+            </div>
+            <div class="main-content">
+        <h2>Your Opinion</h2>
+        <p>
+            Please, use the form below to state your opinion about this page.
+        </p>
+        <form method="POST" action="#" id="opnFrm">
+            <fieldset>
+                <legend>Informácie o návštevníkovi</legend>
+                <div>
+                    <label for="nameElm">Meno:</label>
+                    <input type="text" id="nameElm" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="image_url">URL obrázka mačky:</label>
+                    <input type="url" id="image_url" name="image_url">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Preferencie</legend>
+                <label for="cat_cute">
+                    <input type="radio" id="cat_cute" name="cat_type" value="rozkošné mačky" checked>
+                    Rozkošné mačky
+                </label>
+                <label for="cat_funy">
+                    <input type="radio" id="cat_funy" name="cat_type" value="vtipné mačky">
+                    Vtipné mačky
+                </label>
+                <label for="dog">
+                    <input type="radio" id="dog" name="cat_type" value="uprednostňujem psy">
+                    Uprednostňujem psy
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Váš názor</legend>
+                <div>
+                    <label for="opnElm">Váš názor na mačky:</label>
+                    <textarea id="opnElm" name="opinion" rows="3" cols="50" required></textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="keywords">Kľúčové slová:</label>
+                <input type="text" id="keywords" name="keywords" list="keywordlist">
+                <datalist id="keywordlist">
+                    <option value="mačka">
+                    <option value="mačiatko">
+                    <option value="domáce zviera">
+                    <option value="jedlo pre mačky">
+                    <option value="hry pre mačky">
+                </datalist>
+            </fieldset>
+            <div>
+                <input type="checkbox" id="marketing" name="marketing">
+                <label for="marketing">Chcem byť informovaný o nových článkoch</label>
+            </div>
+            <button type="submit">Odoslať</button>
+            <button type="reset">Zresetovať</button>
+        </form>
+    </div>
+    <div class="right-sidebar">
+  
+    </div>
+
+</div>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function formatDate(dateString) {
+            if (!dateString) {
+                return "Invalid date";
+            }
+
+            const date = new Date(dateString);
+
+            if (isNaN(date.getTime())) {
+                return "Invalid date";
+            }
+
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            return date.toLocaleString('en-US', options);
+        }
+    </script>
+
+
+    <script id="template-article" type="text/template">
+    <div class="container">
+        <div class="left-sidebar">
+        </div>
+        <div class="main-content">
+<div class="article-screen">
+    <div class="article-screen--inner">
+        <div class="article-screen--text">
+            <article class="strangers" >
+                <h3>{{title}}</h3>
+                <p>
+                    by {{author}}
+                </p>
+                {{#imageLink}}
+                <figure>
+                    <img src="{{imageLink}}" alt="article figure"/>
+                </figure>
+                {{/imageLink}}
+                <div>{{{content}}}</div>
+                <!-- <p>
+                    Keywords:
+                    {{tags}}
+                </p> -->
+                <button id="prevPageBtn">Previous Page</button>
+                <button id="nextPageBtn">Next Page</button>
+            </article>
+            <h3 >Comments:</h3>
+            <div class="88-77">
+            {{#JSONComments}}
+            {{#comments}}
+            <div class="article-form-screen--comments">
+                <div class="article-form-screen--comments-info">
+                    <h2>Author: {{author}}</h2>
+                    <p>Comment: {{text}}</p>
+                    <h3>Date: {{dateCreated}}</h3>
+                </div>
+            </div>
+            {{/comments}}
+            {{/JSONComments}}
+        </div>
+
+            <a id="addComment" href="#show"  class="linkAsButton">Add comment</a>
+          
+
+            <div id='form-wrap'>
+                <form id="articleForm3">
+                    
+                        <div class="input-label-title">
+                            <h3 >New comment</h3>
+                        </div>
+                        
+                        <div class="input-label-input">
+                            <div class="form__group field">
+                                <label class="form__label author-label" for="author"> <span> Author: </span> </label>
+                                <input id="authorcom" type="text" class="form__field " name="author" id="author3" size="50" maxlength="100" placeholder=""/>
+                            </div>
+                        </div>
+                        
+                            <div class="input-label-input">
+
+                                <div class="form__group field">
+                                    <label class="form__label  comm-label" for="title"><span> Comment: </span></label>
+                                    <input type="text" class="form__field" name="title" id="title3" size="50" maxlength="100"
+                                            pattern="\S[\S\s]*" placeholder="e.g. Good."/>
+                                </div>
+
+                            </div>
+                       
+                    
+                    <a href="{{addComm}}" class="linkAsButton"> Add comment </a>
+                    <a href="#canselComm" class="linkAsButton"> Cansel</a>
+                </form>
+            </div>
+            <footer class="iditssbut">
+                <a href="{{backLink}}" class="linkAsButton"><< Back</a>
+                <a href="{{editLink}}" class="linkAsButton">Edit</a>
+                <a href="{{deleteLink}}" class="linkAsButton">Delete</a>
+            </footer>
+        </div>
+    </div>
+</div>
+</div>
+<div class="right-sidebar">
+
+</div>
+
+</div>
+</script>
+
+
+
+
+    <script id="template-article-form" type="text/template">
+        <div class="container">
+            <div class="left-sidebar">
+            </div>
+            <div class="main-content">
+    
+    <article>
+        <h2>{{formTitle}}</h2> <br><br>
+
+        <form id="articleForm">
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" value="{{author}}" size="50" 
+                   title="Article author, max. length 100 characters." 
+                   maxlength="100" placeholder="e.g. Ján Trieska" />
+            <br>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="{{title}}" size="50"  
+                   maxlength="100" pattern="\S[\S\s]*" placeholder="e.g. My story." required 
+                   title="Article title, mandatory item, max. length: 100 characters. 
+The first character must not be a space."  />
+            <br>
+            <label for="imageLink">Image (url):</label>
+            <input type="url" name="imageLink" id="imageLink" value="{{imageLink}}" size="50" 
+                   title="Image URL, max. length 100 characters." maxlength="100"/>
+            <br>
+            <label></label>
+            <button type="button" id="btShowFileUpload">
+                Upload image
+            </button>
+
+            <fieldset class="added hiddenElm" id="fsetFileUpload">
+                <legend>Image Upload</legend>
+                <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+                <br />
+                <button type="button" id="btFileUpload">
+                    Send image to server </button>
+                <button type="button" id="btCancelFileUpload">
+                    Cancel uploading </button>
+            </fieldset>
+
+
+            <br>
+            <label for="content">Article content:</label>
+            <textarea
+                    name="content" id="content" spellcheck="true" lang="sk"
+                    cols="50" rows="20" required
+                    title="Article content, mandatory item, can be plain text or in HTML.">
+              {{content}}
+            </textarea>
+            <br>
+            <label for="tags">Keywords:</label>
+            <input  type="text" name="tags" id="tags" value="{{tags}}" size="50"
+                    title="Keyword list, comma separated." placeholder="e.g. village, drama" />
+            <br> <br>
+            <button type="reset"> Reset Form </button>
+            <button type="submit"> {{submitBtTitle}} </button>
+
+        </form>
+    </article>
+
+    <footer>
+        <br>
+        <a href="{{backLink}}" class="linkAsButton"><< Back</a>
+        
+    </footer>
+</div>
+<div class="right-sidebar">
+</div>
+</div>
+</script>
+
+    <div class="container">
+        <div class="left-sidebar">
+        </div>
+        <div class="main-content">
+
+            <div class="socsiety">
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/watch?v=cwJKjuyLv80" target="_blank">YouTube</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://discord.com" target="_blank">Discord</a>
+            </div>
+        </div>
+        <div class="right-sidebar">
+        </div>
+    </div>
+
+
+    <!--JavaScript code, inserted as a module-->
+    <script type="module" src="js/index.js"></script>
+    <script src="js/signinOut.js"></script> <!-- Добавьте эту строку -->
+
+
+</body>
+
+</html>
